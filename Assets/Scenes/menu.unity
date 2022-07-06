@@ -480,6 +480,31 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2587362577960427268, guid: 06d0008d77f87f54a9396b0613e2ee57,
+        type: 3}
+      propertyPath: _debugView
+      value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849669486487638119, guid: 06d0008d77f87f54a9396b0613e2ee57,
+        type: 3}
+      propertyPath: _debugText
+      value: dawdawd
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849669486487638119, guid: 06d0008d77f87f54a9396b0613e2ee57,
+        type: 3}
+      propertyPath: _debugView
+      value: Arena
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849669486487638119, guid: 06d0008d77f87f54a9396b0613e2ee57,
+        type: 3}
+      propertyPath: _currentText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568835715871697856, guid: 06d0008d77f87f54a9396b0613e2ee57,
+        type: 3}
+      propertyPath: _debugView
+      value: Exit
+      objectReference: {fileID: 0}
     - target: {fileID: 7638245469215071476, guid: 06d0008d77f87f54a9396b0613e2ee57,
         type: 3}
       propertyPath: m_Name
