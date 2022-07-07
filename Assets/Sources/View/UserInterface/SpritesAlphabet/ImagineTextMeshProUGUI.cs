@@ -31,7 +31,7 @@ namespace Sources.View.UserInterface.SpritesAlphabet
         }
 
         private void OnValidate()
-        {
+        { 
             if (Application.isPlaying)
                 return;
             
