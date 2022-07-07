@@ -1,0 +1,1364 @@
+fileFormatVersion: 2
+guid: 17a0d8e437df5ee41ad191461d43b683
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7811225075502377249
+    second: Nickname_Alphabet_0
+  - first:
+      213: -2667381333826303889
+    second: Nickname_Alphabet_1
+  - first:
+      213: 2263674291677997390
+    second: Nickname_Alphabet_2
+  - first:
+      213: -4619851391542677502
+    second: Nickname_Alphabet_3
+  - first:
+      213: -67258379187782619
+    second: Nickname_Alphabet_5
+  - first:
+      213: -8629328198191351437
+    second: Nickname_Alphabet_6
+  - first:
+      213: -2436059064417330538
+    second: Nickname_Alphabet_7
+  - first:
+      213: 3666254801309206943
+    second: Nickname_Alphabet_8
+  - first:
+      213: -4740912820490700602
+    second: Nickname_Alphabet_9
+  - first:
+      213: -3714421929462807133
+    second: Nickname_Alphabet_10
+  - first:
+      213: -4844994345120838453
+    second: Nickname_Alphabet_11
+  - first:
+      213: 7300296660905355727
+    second: Nickname_Alphabet_12
+  - first:
+      213: 8709332748024937888
+    second: Nickname_Alphabet_13
+  - first:
+      213: -2380368551929315841
+    second: Nickname_Alphabet_14
+  - first:
+      213: -2227294921804758877
+    second: Nickname_Alphabet_15
+  - first:
+      213: -5255183713852111886
+    second: Nickname_Alphabet_16
+  - first:
+      213: -5629691304389010866
+    second: Nickname_Alphabet_17
+  - first:
+      213: -1909228120207962510
+    second: Nickname_Alphabet_18
+  - first:
+      213: 131249488683648783
+    second: Nickname_Alphabet_19
+  - first:
+      213: 7614503988466259957
+    second: Nickname_Alphabet_20
+  - first:
+      213: -3172779494324759530
+    second: Nickname_Alphabet_4
+  - first:
+      213: 766465645823828864
+    second: Nickname_Alphabet_21
+  - first:
+      213: -2524624165650299027
+    second: Nickname_Alphabet_22
+  - first:
+      213: 5789416418849948361
+    second: Nickname_Alphabet_23
+  - first:
+      213: 1930679758000569488
+    second: Nickname_Alphabet_24
+  - first:
+      213: -2683672420189699473
+    second: Nickname_Alphabet_25
+  - first:
+      213: -4969707230782193876
+    second: Nickname_Alphabet_26
+  - first:
+      213: -8143872898283829375
+    second: Nickname_Alphabet_27
+  - first:
+      213: 6446144172738597284
+    second: Nickname_Alphabet_28
+  - first:
+      213: 8887063693790540591
+    second: Nickname_Alphabet_29
+  - first:
+      213: 4569537589493390918
+    second: Nickname_Alphabet_30
+  - first:
+      213: -7958504593421452911
+    second: Nickname_Alphabet_31
+  - first:
+      213: -7679609073824119214
+    second: Nickname_Alphabet_32
+  - first:
+      213: 4045188949711147167
+    second: Nickname_Alphabet_33
+  - first:
+      213: 5215915898942517639
+    second: Nickname_Alphabet_34
+  - first:
+      213: 7667628449462842415
+    second: Nickname_Alphabet_35
+  - first:
+      213: -3491415131815217831
+    second: Nickname_Alphabet_36
+  - first:
+      213: -509236886991868606
+    second: Nickname_Alphabet_37
+  - first:
+      213: 6106739720025285186
+    second: Nickname_Alphabet_38
+  - first:
+      213: 6274270870138209781
+    second: Nickname_Alphabet_39
+  - first:
+      213: 2757755468629332651
+    second: Nickname_Alphabet_40
+  - first:
+      213: -2243977457666613200
+    second: Nickname_Alphabet_41
+  - first:
+      213: -2966453454370802081
+    second: Nickname_Alphabet_42
+  - first:
+      213: -3938129756195747501
+    second: Nickname_Alphabet_43
+  - first:
+      213: 1687972204723675389
+    second: Nickname_Alphabet_44
+  - first:
+      213: -403192769116735340
+    second: Nickname_Alphabet_45
+  - first:
+      213: -1476988591331295483
+    second: Nickname_Alphabet_46
+  - first:
+      213: 8902635613462523753
+    second: Nickname_Alphabet_47
+  - first:
+      213: -1040041193014286227
+    second: Nickname_Alphabet_48
+  - first:
+      213: -8469117349185036052
+    second: Nickname_Alphabet_49
+  - first:
+      213: 7868807846346657475
+    second: Nickname_Alphabet_50
+  - first:
+      213: 8514538490113333432
+    second: Nickname_Alphabet_51
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nickname_Alphabet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 788
+        width: 106
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd69e02fd24f89390800000000000000
+      internalID: -7811225075502377249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 787
+        width: 109
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6886cc2fce8bfad0800000000000000
+      internalID: -2667381333826303889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 786
+        width: 97
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49a6aa56cf2a6f10800000000000000
+      internalID: 2263674291677997390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_3
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 786
+        width: 106
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200310ce2adf2efb0800000000000000
+      internalID: -4619851391542677502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_5
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 786
+        width: 106
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52cf7584cdc011ff0800000000000000
+      internalID: -67258379187782619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_6
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 785
+        width: 106
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379fa8059b77e3880800000000000000
+      internalID: -8629328198191351437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_7
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 785
+        width: 106
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ad88d0031613ed0800000000000000
+      internalID: -2436059064417330538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_8
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 785
+        width: 106
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f990b10315721e230800000000000000
+      internalID: 3666254801309206943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_9
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 785
+        width: 106
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c87e8f78e4e43eb0800000000000000
+      internalID: -4740912820490700602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_10
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 785
+        width: 106
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5c27c5fe8b37cc0800000000000000
+      internalID: -3714421929462807133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 650
+        width: 106
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcccb40205f13ccb0800000000000000
+      internalID: -4844994345120838453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_12
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 650
+        width: 106
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9eb3c622ddf4560800000000000000
+      internalID: 7300296660905355727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_13
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 649
+        width: 106
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0adf3b48df3cdd870800000000000000
+      internalID: 8709332748024937888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_14
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 651
+        width: 101
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffdfdbbe96b37fed0800000000000000
+      internalID: -2380368551929315841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_15
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 651
+        width: 106
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0cbcfb11f0711e0800000000000000
+      internalID: -2227294921804758877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_16
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 651
+        width: 106
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f34d626146d117b0800000000000000
+      internalID: -5255183713852111886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_17
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 651
+        width: 106
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a99c606915fd1b0800000000000000
+      internalID: -5629691304389010866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_18
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 651
+        width: 106
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e41d3e32f0185e0800000000000000
+      internalID: -1909228120207962510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_19
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 651
+        width: 106
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07c0fde6ba42d100800000000000000
+      internalID: 131249488683648783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_20
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 639
+        width: 106
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7935db8072ca960800000000000000
+      internalID: 7614503988466259957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 516
+        width: 105
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614112a2cd508f3d0800000000000000
+      internalID: -3172779494324759530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_21
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 515
+        width: 105
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083aed7a17803aa00800000000000000
+      internalID: 766465645823828864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_22
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 515
+        width: 105
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d670c0782bbb6fcd0800000000000000
+      internalID: -2524624165650299027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_23
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 515
+        width: 59
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c28d5e2f83285050800000000000000
+      internalID: 5789416418849948361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_24
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 513
+        width: 128
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c39aeb2072bca10800000000000000
+      internalID: 1930679758000569488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_25
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 510
+        width: 116
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62841d072ea1cad0800000000000000
+      internalID: -2683672420189699473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_26
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 510
+        width: 98
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f798faa9d080bb0800000000000000
+      internalID: -4969707230782193876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_27
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 509
+        width: 81
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1878cd14fb62bfe80800000000000000
+      internalID: -8143872898283829375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_28
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 508
+        width: 107
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1d903d8fd457950800000000000000
+      internalID: 6446144172738597284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_29
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 508
+        width: 96
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23f7a40851355b70800000000000000
+      internalID: 8887063693790540591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 105
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e5c892a324a6f30800000000000000
+      internalID: 4569537589493390918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_31
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 385
+        width: 99
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199bccdfc36bd8190800000000000000
+      internalID: -7958504593421452911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_32
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 386
+        width: 111
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 256c8d45c3c8c6590800000000000000
+      internalID: -7679609073824119214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_33
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 386
+        width: 94
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f905edcdae5632830800000000000000
+      internalID: 4045188949711147167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_34
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 386
+        width: 99
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781f7ceffd7a26840800000000000000
+      internalID: 5215915898942517639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_35
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 386
+        width: 75
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2479ef2373e86a60800000000000000
+      internalID: 7667628449462842415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_36
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 385
+        width: 90
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 955fab89f600c8fc0800000000000000
+      internalID: -3491415131815217831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_37
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 384
+        width: 81
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24de254dfb3dee8f0800000000000000
+      internalID: -509236886991868606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_38
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 388
+        width: 101
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24220e3ab6f7fb450800000000000000
+      internalID: 6106739720025285186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_39
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 387
+        width: 82
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f54b272d10b21750800000000000000
+      internalID: 6274270870138209781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 263
+        width: 106
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2da0dccf3854620800000000000000
+      internalID: 2757755468629332651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_41
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 261
+        width: 92
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0302ccf246acbd0e0800000000000000
+      internalID: -2243977457666613200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_42
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 260
+        width: 116
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f567f79dc4a05d6d0800000000000000
+      internalID: -2966453454370802081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_43
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 257
+        width: 95
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3598e821ad3f859c0800000000000000
+      internalID: -3938129756195747501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_44
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 263
+        width: 125
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0a945e6c1ec6710800000000000000
+      internalID: 1687972204723675389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_45
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 266
+        width: 119
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4987acc0052976af0800000000000000
+      internalID: -403192769116735340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_46
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 263
+        width: 116
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50fb46c93bea08be0800000000000000
+      internalID: -1476988591331295483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_47
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 259
+        width: 104
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96fec291ce38c8b70800000000000000
+      internalID: 8902635613462523753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 140
+        width: 106
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d682c9a9b080191f0800000000000000
+      internalID: -1040041193014286227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_49
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 110
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce06ab864a6a77a80800000000000000
+      internalID: -8469117349185036052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_50
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 140
+        width: 122
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce8c47ab0f933d60800000000000000
+      internalID: 7868807846346657475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nickname_Alphabet_51
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 139
+        width: 87
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8989115a7b92670800000000000000
+      internalID: 8514538490113333432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

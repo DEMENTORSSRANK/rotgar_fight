@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19050340d17e4cdea182bfe7c7e130eb, type: 3}
+  m_Name: Letters
+  m_EditorClassIdentifier: 
+  _identifiers:
+  - _symbol: 65
+    _spriteIndex: 0
+  - _symbol: 97
+    _spriteIndex: 1
+  - _symbol: 66
+    _spriteIndex: 2
+  - _symbol: 98
+    _spriteIndex: 3
+  - _symbol: 67
+    _spriteIndex: 4
+  - _symbol: 99
+    _spriteIndex: 5
+  - _symbol: 68
+    _spriteIndex: 6
+  - _symbol: 100
+    _spriteIndex: 7
+  - _symbol: 69
+    _spriteIndex: 8
+  - _symbol: 101
+    _spriteIndex: 9
+  - _symbol: 70
+    _spriteIndex: 10
+  - _symbol: 102
+    _spriteIndex: 11
+  - _symbol: 71
+    _spriteIndex: 12
+  - _symbol: 103
+    _spriteIndex: 13
+  - _symbol: 72
+    _spriteIndex: 14
+  - _symbol: 104
+    _spriteIndex: 15
+  - _symbol: 73
+    _spriteIndex: 16
+  - _symbol: 105
+    _spriteIndex: 17
+  - _symbol: 74
+    _spriteIndex: 18
+  - _symbol: 106
+    _spriteIndex: 19
+  - _symbol: 75
+    _spriteIndex: 20
+  - _symbol: 107
+    _spriteIndex: 21
+  - _symbol: 76
+    _spriteIndex: 22
+  - _symbol: 108
+    _spriteIndex: 23
+  - _symbol: 77
+    _spriteIndex: 24
+  - _symbol: 109
+    _spriteIndex: 25
+  - _symbol: 78
+    _spriteIndex: 26
+  - _symbol: 110
+    _spriteIndex: 27
+  - _symbol: 79
+    _spriteIndex: 28
+  - _symbol: 111
+    _spriteIndex: 29
+  - _symbol: 80
+    _spriteIndex: 30
+  - _symbol: 112
+    _spriteIndex: 31
+  - _symbol: 81
+    _spriteIndex: 32
+  - _symbol: 113
+    _spriteIndex: 33
+  - _symbol: 82
+    _spriteIndex: 34
+  - _symbol: 114
+    _spriteIndex: 35
+  - _symbol: 83
+    _spriteIndex: 36
+  - _symbol: 115
+    _spriteIndex: 37
+  - _symbol: 84
+    _spriteIndex: 38
+  - _symbol: 116
+    _spriteIndex: 39
+  - _symbol: 85
+    _spriteIndex: 40
+  - _symbol: 117
+    _spriteIndex: 41
+  - _symbol: 86
+    _spriteIndex: 42
+  - _symbol: 118
+    _spriteIndex: 43
+  - _symbol: 87
+    _spriteIndex: 44
+  - _symbol: 119
+    _spriteIndex: 45
+  - _symbol: 88
+    _spriteIndex: 46
+  - _symbol: 120
+    _spriteIndex: 47
+  - _symbol: 89
+    _spriteIndex: 48
+  - _symbol: 121
+    _spriteIndex: 49
+  - _symbol: 90
+    _spriteIndex: 50
+  - _symbol: 122
+    _spriteIndex: 51
