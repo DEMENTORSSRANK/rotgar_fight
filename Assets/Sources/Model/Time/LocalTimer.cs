@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Sources.Model.Time
 {
-    public class Timer
+    public class LocalTimer : ITimer
     {
         private readonly int _startSeconds;
         
@@ -15,7 +15,7 @@ namespace Sources.Model.Time
 
         public event Action Ended;
         
-        public Timer(int startSeconds)
+        public LocalTimer(int startSeconds)
         {
             if (startSeconds < 1)
                 throw new ArgumentOutOfRangeException(nameof(startSeconds));
@@ -24,20 +24,20 @@ namespace Sources.Model.Time
             RemainSeconds = startSeconds;
         }
 
-        public void Start()
+        public void Launch()
         {
             if (Running)
-                throw new InvalidOperationException("Timer already started");
+                throw new InvalidOperationException("Timer already launched");
 
-            Running = true;
-
-            ProcessAsync();
-        }
-
-        private async void ProcessAsync()
-        {
             ChangeRemainSeconds(_startSeconds);
             
+            Running = true;
+
+            ProcessTickingAsync();
+        }
+
+        private async void ProcessTickingAsync()
+        {
             while (RemainSeconds > 0)
             {
                 await Task.Delay(1000);

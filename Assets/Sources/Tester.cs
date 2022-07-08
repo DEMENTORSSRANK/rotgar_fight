@@ -1,4 +1,5 @@
-﻿using Sources.Model.Time;
+﻿using Sources.Model.Bodies;
+using Sources.Model.Time;
 using UnityEngine;
 
 namespace Sources
@@ -7,19 +8,12 @@ namespace Sources
     {
         private void Start()
         {
-            var timer = new Timer(20);
-            
-            timer.Ended += delegate
+            var rangeTime = new TimeRange(1, 5);
+
+            for (int i = 0; i < 100; i++)
             {
-                print("Timer end");
-            };
-            
-            timer.RemainSecondsChanged += delegate(int seconds)
-            {
-                print($"Timing: {seconds}");
-            };
-            
-            timer.Start();
+                print(rangeTime.Random);
+            }
         }
     }
 }

@@ -1,0 +1,54 @@
+﻿using System;
+using UnityEngine;
+
+namespace Sources.Model.Heal
+{
+    public class Health
+    {
+        private readonly int _startValue;
+        
+        public int Value { get; private set; }
+
+        public bool IsDead => Value <= 0;
+        
+        public event Action<int> ValueChanged;
+
+        public event Action Dead;
+
+        public Health(int value)
+        {
+            if (value <= 0)
+                throw new ArgumentOutOfRangeException(nameof(value));
+
+            _startValue = value;
+            ResetToStartValue();
+        }
+
+        public void ApplyDamage(int damage)
+        {
+            if (damage <= 0)
+                throw new ArgumentOutOfRangeException(nameof(damage));
+
+            Value = Mathf.Clamp(Value - damage, 0, Value);
+            
+            ValueChanged?.Invoke(Value);
+            
+            TryDie();
+        }
+
+        public void ResetToStartValue()
+        {
+            Value = _startValue;
+            
+            ValueChanged?.Invoke(Value);
+        }
+
+        private void TryDie()
+        {
+            if (Value > 0)
+                return;
+            
+            Dead?.Invoke();
+        }
+    }
+}
