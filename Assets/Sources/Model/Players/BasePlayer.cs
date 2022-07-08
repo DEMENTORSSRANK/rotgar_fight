@@ -5,6 +5,7 @@ using Sources.Model.Attack;
 using Sources.Model.Bodies;
 using Sources.Model.Defence;
 using Sources.Model.Heal;
+using UnityEngine;
 
 namespace Sources.Model.Players
 {
@@ -13,10 +14,6 @@ namespace Sources.Model.Players
         private readonly Body _body;
 
         protected readonly BodyPartTypeGenerator BodyPartTypeGenerator;
-
-        private Task<BodyPartType> _chooseDefense;
-
-        private Task<BodyPartType> _chooseAttack;
 
         protected bool AvailableToReady => Defender.IsReady && Attacker.IsReady;
         
@@ -46,6 +43,10 @@ namespace Sources.Model.Players
             if (IsChoosingDefense)
                 throw new InvalidOperationException("Already choosing");
             
+            Defender.ClearAllDefence();
+
+            IsChoosingDefense = true;
+            
             while (IsChoosingDefense)
             {
                 BodyPartType chosen = await ChooseDefense();
@@ -53,6 +54,8 @@ namespace Sources.Model.Players
                 if (!IsChoosingDefense)
                     break;
 
+                Debug.Log($"Defence {GetType()} choose: {chosen}");
+                
                 Defender.DefencePart(chosen);
             }
         }
@@ -63,6 +66,8 @@ namespace Sources.Model.Players
                 throw new InvalidOperationException("Already choosing");
             
             Attacker.IsReady = false;
+
+            IsChoosingAttack = true;
             
             while (IsChoosingAttack)
             {
@@ -117,12 +122,12 @@ namespace Sources.Model.Players
             Attacker.SelectAttack(BodyPartTypeGenerator.GenerateRandom());
         }
 
-        protected void MakeReady()
+        public void MakeReady()
         {
             if (!IsChoosingAttack || !IsChoosingDefense)
                 throw new InvalidOperationException("Not choosing yet");
             
-            if (AvailableToReady)
+            if (!AvailableToReady)
                 throw new InvalidOperationException("Not available to ready");
             
             if (IsReady)
@@ -131,15 +136,20 @@ namespace Sources.Model.Players
             IsReady = true;
             
             StopAllChoosing();
-            
-            Defender.ClearAllDefence();
+        }
 
-            Attacker.IsReady = false;
+        public void UnReady()
+        {
+            IsReady = false;
         }
 
         public void GetAttack(BodyPartType partType, int damage)
         {
-            Health.ApplyDamage(damage * Defender.CalculateDamageModifierOfPart(partType));
+            float resultDamage = damage * Defender.CalculateDamageModifierOfPart(partType);
+
+            Debug.Log($"{GetType()} got damaged on {partType}: {resultDamage}");
+            
+            Health.ApplyDamage(resultDamage);
         }
         
         protected abstract Task<BodyPartType> ChooseDefense();

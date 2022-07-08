@@ -9,7 +9,7 @@ namespace Sources.Input
         
         public event Action<BodyPartType> DefenseChosen;
 
-        public event Action ChooseCompleted;
+        public event Action GotReady;
 
         public void ChooseAttack(BodyPartType partType)
         {
@@ -23,7 +23,7 @@ namespace Sources.Input
 
         public void CompleteChoose()
         {
-            ChooseCompleted?.Invoke();
+            GotReady?.Invoke();
         }
     }
 }

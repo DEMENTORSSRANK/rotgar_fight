@@ -15,11 +15,11 @@ namespace Sources.View.UserInterface.SpritesAlphabet
 
         private TextMeshProUGUI _text;
 
-        protected void GenerateText(string input)
+        public void GenerateText(object input)
         {
             _builder.Clear();
 
-            foreach (var symbol in input)
+            foreach (var symbol in input.ToString())
                 _builder.Append(_spritesAlphabet.GetReplacedTagOfSymbol(symbol));
 
             _text.text = _builder.ToString();

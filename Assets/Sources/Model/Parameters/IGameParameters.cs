@@ -5,10 +5,6 @@ namespace Sources.Model.Parameters
 {
     public interface IGameParameters
     {
-        int AvailableDefencePartsCount { get; }
-
-        int AvailableAttackPartsCount { get; }
-        
         ITimer Timer { get; }
         
         BasePlayer Player { get; }

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Sources.Model.Bodies;
 using Sources.Model.Time;
+using UnityEngine;
 
 namespace Sources.Model.Players
 {
@@ -15,13 +17,20 @@ namespace Sources.Model.Players
             _thinkTime = thinkTime;
         }
 
-        protected override async Task<BodyPartType> ChooseDefense() => await WaitThinkTimeAndGetRandomType();
-
-        protected override async Task<BodyPartType> ChooseAttack() => await WaitThinkTimeAndGetRandomType();
-
-        private async Task<BodyPartType> WaitThinkTimeAndGetRandomType()
+        protected override async Task<BodyPartType> ChooseDefense()
         {
             await Task.Delay(GetRandomThinkTimeInMilliseconds());
+
+            TryToGetReadyAsync();
+
+            var result = BodyPartTypeGenerator.GenerateRandom(Defender.Defenced.ToArray());
+
+            return result;
+        }
+
+        protected override async Task<BodyPartType> ChooseAttack()
+        {
+            await Task.Delay(1);
 
             TryToGetReadyAsync();
             

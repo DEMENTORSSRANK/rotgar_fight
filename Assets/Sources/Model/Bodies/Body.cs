@@ -7,7 +7,7 @@ namespace Sources.Model.Bodies
     {
         private readonly BodyPart[] _parts;
 
-        public Body(params BodyPart[] parts)
+        public Body(BodyPart[] parts)
         {
             _parts = parts ?? throw new ArgumentNullException(nameof(parts));
         }

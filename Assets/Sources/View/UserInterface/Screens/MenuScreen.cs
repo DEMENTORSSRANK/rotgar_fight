@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Sources.View.UserInterface.Screens
@@ -13,7 +14,7 @@ namespace Sources.View.UserInterface.Screens
 
         private void OnArenaClicked()
         {
-            
+            SceneManager.LoadScene(1);
         }
 
         private void OnCharacterClicked()

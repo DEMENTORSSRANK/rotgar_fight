@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Sources.Model.Time
 {
     public class LocalTimer : ITimer
     {
+        private CancellationTokenSource _cancelTokenSource = new CancellationTokenSource();
+
         private readonly int _startSeconds;
-        
+
         public int RemainSeconds { get; private set; }
 
         public bool Running { get; private set; }
@@ -14,14 +17,14 @@ namespace Sources.Model.Time
         public event Action<int> RemainSecondsChanged;
 
         public event Action Ended;
-        
+
         public LocalTimer(int startSeconds)
         {
             if (startSeconds < 1)
                 throw new ArgumentOutOfRangeException(nameof(startSeconds));
 
-            _startSeconds = startSeconds;
             RemainSeconds = startSeconds;
+            _startSeconds = startSeconds;
         }
 
         public void Launch()
@@ -30,21 +33,41 @@ namespace Sources.Model.Time
                 throw new InvalidOperationException("Timer already launched");
 
             ChangeRemainSeconds(_startSeconds);
-            
+
             Running = true;
 
-            ProcessTickingAsync();
+            ProcessTickingAsync(_cancelTokenSource.Token);
         }
 
-        private async void ProcessTickingAsync()
+        public void Stop()
         {
-            while (RemainSeconds > 0)
-            {
-                await Task.Delay(1000);
+            if (!Running)
+                throw new InvalidOperationException("Timer is not launched");
 
-                ChangeRemainSeconds(--RemainSeconds);
+            Running = false;
+
+            _cancelTokenSource.Cancel();
+
+            _cancelTokenSource = new CancellationTokenSource();
+        }
+
+        private async void ProcessTickingAsync(CancellationToken token)
+        {
+            var tokenSource = CancellationTokenSource.CreateLinkedTokenSource(token);
+            TaskCompletionSource<int> task = new TaskCompletionSource<int>();
+
+            tokenSource.Token.Register(() => task.SetResult(0));
+
+            while (RemainSeconds > 0 && Running)
+            {
+                _cancelTokenSource.Token.ThrowIfCancellationRequested();
+
+                await Task.WhenAny(Task.Delay(1000, CancellationToken.None), task.Task);
+
+                if (Running)
+                    ChangeRemainSeconds(--RemainSeconds);
             }
-            
+
             Ended?.Invoke();
 
             Running = false;
@@ -53,7 +76,7 @@ namespace Sources.Model.Time
         private void ChangeRemainSeconds(int seconds)
         {
             RemainSeconds = seconds;
-            
+
             RemainSecondsChanged?.Invoke(seconds);
         }
     }

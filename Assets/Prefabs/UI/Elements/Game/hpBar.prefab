@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 311718639876927056}
   - component: {fileID: 8898966420060419111}
   - component: {fileID: 5652165415146228068}
+  - component: {fileID: 1028843034925512348}
   m_Layer: 5
   m_Name: hpBar
   m_TagString: Untagged
@@ -75,6 +76,62 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1028843034925512348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601324793808834427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630518e09642486a92e5e309ed0442a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _progressSpritesWithPercents:
+  - _sprite: {fileID: 0}
+    _percents: 0
+  - _sprite: {fileID: 21300000, guid: 8debec5c9aef9da46a59bc8cc34e28cb, type: 3}
+    _percents: 5
+  - _sprite: {fileID: 21300000, guid: 0b75a73e13cf5554ab06c733e7d75c23, type: 3}
+    _percents: 10
+  - _sprite: {fileID: 21300000, guid: c7aba9e3ba6eb3b44ad7f51ce9eb7492, type: 3}
+    _percents: 15
+  - _sprite: {fileID: 21300000, guid: 5741509310623ad4f8bb6f30c5b0d5f4, type: 3}
+    _percents: 20
+  - _sprite: {fileID: 21300000, guid: f0f3af34fecc60c46bb5d7d2b184a7d9, type: 3}
+    _percents: 25
+  - _sprite: {fileID: 21300000, guid: 116bdc60b2127524eb31c31bcb547a9e, type: 3}
+    _percents: 30
+  - _sprite: {fileID: 21300000, guid: 2844ac4a0fc73de49b01a960e9cfd398, type: 3}
+    _percents: 35
+  - _sprite: {fileID: 21300000, guid: 8af5206593e896147bd2a21ee9ddfe59, type: 3}
+    _percents: 40
+  - _sprite: {fileID: 21300000, guid: 47bc3970adac8a447b77003e3dfd8551, type: 3}
+    _percents: 45
+  - _sprite: {fileID: 21300000, guid: 523a9ce55e50e234db5d47a8359834ec, type: 3}
+    _percents: 50
+  - _sprite: {fileID: 21300000, guid: e20fecca156911b4ea296663f8eab4e4, type: 3}
+    _percents: 55
+  - _sprite: {fileID: 21300000, guid: 88dc309a5add88142a361dc3eb8fadcf, type: 3}
+    _percents: 60
+  - _sprite: {fileID: 21300000, guid: bb8e17c1efff15e4381e126f1da927d7, type: 3}
+    _percents: 65
+  - _sprite: {fileID: 21300000, guid: f60a05179e182b8419431043c70b43ae, type: 3}
+    _percents: 70
+  - _sprite: {fileID: 21300000, guid: 84d8be308d5a9dd4fb789fbde6f1b24f, type: 3}
+    _percents: 75
+  - _sprite: {fileID: 21300000, guid: 4e5089746e4cc2f4f96a4e79b9bb75b8, type: 3}
+    _percents: 80
+  - _sprite: {fileID: 21300000, guid: 8a4b8ee7080dc8e4c8e5133790e861e5, type: 3}
+    _percents: 85
+  - _sprite: {fileID: 21300000, guid: 8db7a492386c04c4e9bccf7db335b5a5, type: 3}
+    _percents: 90
+  - _sprite: {fileID: 21300000, guid: 051fd4b1879759344bfae8bb226be6cc, type: 3}
+    _percents: 95
+  - _sprite: {fileID: 21300000, guid: 314ef9055a8ae64489a9e56caa48cd69, type: 3}
+    _percents: 100
+  _progressRender: {fileID: 1798773114315558562}
 --- !u!1 &7376934259929704708
 GameObject:
   m_ObjectHideFlags: 0

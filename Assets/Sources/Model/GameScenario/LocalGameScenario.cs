@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Sources.Model.Parameters;
+using UnityEngine;
 
 namespace Sources.Model.GameScenario
 {
@@ -12,6 +13,8 @@ namespace Sources.Model.GameScenario
         
         protected override async Task ProcessMoveAsync()
         {
+            Debug.Log("Move started");
+            
             GameParameters.Timer.Launch();
             
             Player.ChoosingAttackAsync();
@@ -32,8 +35,27 @@ namespace Sources.Model.GameScenario
                 Player.PushToReady();
             
             Player.Attacker.Attack(Enemy);
-            
+
+            if (Enemy.Health.IsDead)
+            {
+                StopAllGame();
+                
+                return;
+            }
+
             Enemy.Attacker.Attack(Player);
+
+            StopAllGame();
+        }
+
+        private void StopAllGame()
+        {
+            Player.UnReady();
+            
+            Enemy.UnReady();
+
+            if (GameParameters.Timer.Running)
+                GameParameters.Timer.Stop();
         }
     }
 }

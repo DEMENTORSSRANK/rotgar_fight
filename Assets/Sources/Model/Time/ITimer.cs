@@ -1,9 +1,9 @@
-﻿using System;
-
-namespace Sources.Model.Time
+﻿namespace Sources.Model.Time
 {
     public interface ITimer : IReadOnlyTimer
     {
         void Launch();
+
+        void Stop();
     }
 }

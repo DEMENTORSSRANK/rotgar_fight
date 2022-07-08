@@ -26,7 +26,7 @@ namespace Sources.Model.Heal
 
         public void ApplyDamage(float damage)
         {
-            if (damage <= 0)
+            if (damage < 0)
                 throw new ArgumentOutOfRangeException(nameof(damage));
 
             Value = Mathf.Clamp(Value - damage, 0, Value);
