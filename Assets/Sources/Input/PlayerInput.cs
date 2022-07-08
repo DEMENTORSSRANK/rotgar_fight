@@ -5,18 +5,25 @@ namespace Sources.Input
 {
     public class PlayerInput
     {
-        public event Action<BodyPartType> AttackChoosen;
+        public event Action<BodyPartType> AttackChosen;
         
-        public event Action<BodyPartType> DefenseChoosen;
+        public event Action<BodyPartType> DefenseChosen;
+
+        public event Action ChooseCompleted;
 
         public void ChooseAttack(BodyPartType partType)
         {
-            AttackChoosen?.Invoke(partType);
+            AttackChosen?.Invoke(partType);
         }
 
         public void ChooseDefense(BodyPartType partType)
         {
-            DefenseChoosen?.Invoke(partType);
+            DefenseChosen?.Invoke(partType);
+        }
+
+        public void CompleteChoose()
+        {
+            ChooseCompleted?.Invoke();
         }
     }
 }

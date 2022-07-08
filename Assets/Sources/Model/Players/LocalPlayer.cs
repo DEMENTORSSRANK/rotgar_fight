@@ -7,9 +7,9 @@ namespace Sources.Model.Players
     public class LocalPlayer : BasePlayer
     {
         private BodyPartType _defense;
-        
+
         private BodyPartType _attack;
-        
+
         private bool _waitingDefense;
 
         private bool _waitingAttack;
@@ -20,7 +20,7 @@ namespace Sources.Model.Players
                 throw new InvalidOperationException("Cant input defense, not waiting");
 
             _defense = partType;
-            
+
             _waitingDefense = false;
         }
 
@@ -34,11 +34,12 @@ namespace Sources.Model.Players
             _waitingAttack = false;
         }
 
-        public LocalPlayer(Body body, int startHealth, int damage) : base(body, startHealth, damage)
+        public LocalPlayer(Body body, int startHealth, int damage, int defenceCapacity) : base(body, startHealth,
+            damage, defenceCapacity)
         {
         }
 
-        public override async Task<BodyPartType> ChooseDefense()
+        protected override async Task<BodyPartType> ChooseDefense()
         {
             _waitingDefense = true;
 
@@ -48,7 +49,7 @@ namespace Sources.Model.Players
             return _defense;
         }
 
-        public override async Task<BodyPartType> ChooseAttack()
+        protected override async Task<BodyPartType> ChooseAttack()
         {
             _waitingAttack = true;
 

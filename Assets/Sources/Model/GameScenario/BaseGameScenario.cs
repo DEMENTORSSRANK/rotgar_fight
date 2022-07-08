@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Sources.Model.Parameters;
+using Sources.Model.Players;
 
 namespace Sources.Model.GameScenario
 {
     public abstract class BaseGameScenario
     {
         protected readonly IGameParameters GameParameters;
+
+        protected BasePlayer Player => GameParameters.Player;
+
+        protected BasePlayer Enemy => GameParameters.Enemy;
         
         public bool IsCompleting { get; private set; }
 

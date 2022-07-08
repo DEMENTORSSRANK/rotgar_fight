@@ -1,4 +1,5 @@
 ﻿using Sources.Model.Players;
+using Sources.Model.Time;
 
 namespace Sources.Model.Parameters
 {
@@ -8,7 +9,7 @@ namespace Sources.Model.Parameters
 
         int AvailableAttackPartsCount { get; }
         
-        int MoveSeconds { get; }
+        ITimer Timer { get; }
         
         BasePlayer Player { get; }
         

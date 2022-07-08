@@ -9,29 +9,36 @@ namespace Sources.Model.Players
     {
         private readonly TimeRange _thinkTime;
 
-        private readonly BodyPartTypeGenerator _typeGenerator;
-
-        public LocalBot(Body body, int startHealth, int damage, TimeRange thinkTime, BodyPartTypeGenerator generator) :
-            base(body, startHealth, damage)
+        public LocalBot(Body body, int startHealth, int damage, int defenceCapacity, TimeRange thinkTime) : base(body,
+            startHealth, damage, defenceCapacity)
         {
             _thinkTime = thinkTime;
-            _typeGenerator = generator ?? throw new ArgumentNullException(nameof(generator));
         }
 
-        public override async Task<BodyPartType> ChooseDefense() => await WaitThinkTimeAndGetRandomType();
+        protected override async Task<BodyPartType> ChooseDefense() => await WaitThinkTimeAndGetRandomType();
 
-        public override async Task<BodyPartType> ChooseAttack() => await WaitThinkTimeAndGetRandomType();
-        
+        protected override async Task<BodyPartType> ChooseAttack() => await WaitThinkTimeAndGetRandomType();
+
         private async Task<BodyPartType> WaitThinkTimeAndGetRandomType()
         {
             await Task.Delay(GetRandomThinkTimeInMilliseconds());
 
-            return _typeGenerator.GenerateRandom();
+            TryToGetReadyAsync();
+            
+            return BodyPartTypeGenerator.GenerateRandom();
         }
-        
+
         private int GetRandomThinkTimeInMilliseconds()
         {
             return (int) Math.Round(_thinkTime.Random * 1000);
+        }
+
+        private async void TryToGetReadyAsync()
+        {
+            await Task.Delay(GetRandomThinkTimeInMilliseconds());
+            
+            if (AvailableToReady && !IsReady)
+                MakeReady();
         }
     }
 }

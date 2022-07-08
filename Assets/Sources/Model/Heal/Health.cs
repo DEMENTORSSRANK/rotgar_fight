@@ -5,17 +5,17 @@ namespace Sources.Model.Heal
 {
     public class Health
     {
-        private readonly int _startValue;
+        private readonly float _startValue;
         
-        public int Value { get; private set; }
+        public float Value { get; private set; }
 
         public bool IsDead => Value <= 0;
         
-        public event Action<int> ValueChanged;
+        public event Action<float> ValueChanged;
 
         public event Action Dead;
 
-        public Health(int value)
+        public Health(float value)
         {
             if (value <= 0)
                 throw new ArgumentOutOfRangeException(nameof(value));
@@ -24,7 +24,7 @@ namespace Sources.Model.Heal
             ResetToStartValue();
         }
 
-        public void ApplyDamage(int damage)
+        public void ApplyDamage(float damage)
         {
             if (damage <= 0)
                 throw new ArgumentOutOfRangeException(nameof(damage));

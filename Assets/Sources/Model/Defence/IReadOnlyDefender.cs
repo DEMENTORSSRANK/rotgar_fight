@@ -1,4 +1,6 @@
-﻿namespace Sources.Model.Bodies
+﻿using Sources.Model.Bodies;
+
+namespace Sources.Model.Defence
 {
     public interface IReadOnlyDefender
     {

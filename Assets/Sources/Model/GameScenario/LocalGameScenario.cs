@@ -1,34 +1,39 @@
 ﻿using System.Threading.Tasks;
 using Sources.Model.Parameters;
-using Sources.Model.Time;
 
 namespace Sources.Model.GameScenario
 {
     public class LocalGameScenario : BaseGameScenario
     {
-        private readonly LocalTimer _moveTimer;
-
         public LocalGameScenario(IGameParameters gameParameters) : base(gameParameters)
         {
-            _moveTimer = new LocalTimer(gameParameters.MoveSeconds);
+            
         }
         
         protected override async Task ProcessMoveAsync()
         {
-            _moveTimer.Launch();
+            GameParameters.Timer.Launch();
             
-            GameParameters.Player.ChooseAttack();
-
-            GameParameters.Player.ChooseDefense();
-
-            GameParameters.Enemy.ChooseAttack();
-
-            GameParameters.Enemy.ChooseDefense();
+            Player.ChoosingAttackAsync();
             
-            while (_moveTimer.Running)
-            {
+            Player.ChoosingDefenseAsync();
+            
+            Enemy.ChoosingAttackAsync();
+            
+            Enemy.ChoosingDefenseAsync();
+            
+            while (GameParameters.Timer.Running && (!Enemy.IsReady || !Player.IsReady))
                 await Task.Delay(1);
-            }
+            
+            if (!Enemy.IsReady)
+                Enemy.PushToReady();
+            
+            if (!Player.IsReady)
+                Player.PushToReady();
+            
+            Player.Attacker.Attack(Enemy);
+            
+            Enemy.Attacker.Attack(Player);
         }
     }
 }
