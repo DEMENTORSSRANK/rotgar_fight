@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Sources.Model.Bodies;
 using Sources.Model.Time;
-using UnityEngine;
 
 namespace Sources.Model.Players
 {
@@ -17,24 +16,24 @@ namespace Sources.Model.Players
             _thinkTime = thinkTime;
         }
 
-        protected override async Task<BodyPartType> ChooseDefense()
+        public override async Task<BodyPartType> ChooseDefense()
         {
             await Task.Delay(GetRandomThinkTimeInMilliseconds());
 
             TryToGetReadyAsync();
 
-            var result = BodyPartTypeGenerator.GenerateRandom(Defender.Defenced.ToArray());
+            var result = BodyPartTypeGenerator.GenerateRandom(Defender.Chosen.ToArray());
 
             return result;
         }
 
-        protected override async Task<BodyPartType> ChooseAttack()
+        public override async Task<BodyPartType> ChooseAttack()
         {
-            await Task.Delay(1);
+            await Task.Delay(GetRandomThinkTimeInMilliseconds());
 
             TryToGetReadyAsync();
             
-            return BodyPartTypeGenerator.GenerateRandom();
+            return BodyPartTypeGenerator.GenerateRandom(Attacker.Chosen.ToArray());
         }
 
         private int GetRandomThinkTimeInMilliseconds()
@@ -46,8 +45,8 @@ namespace Sources.Model.Players
         {
             await Task.Delay(GetRandomThinkTimeInMilliseconds());
             
-            if (AvailableToReady && !IsReady)
-                MakeReady();
+            if (Readiness.AvailableToReady && !Readiness.IsReady)
+                Readiness.MakeReady();
         }
     }
 }

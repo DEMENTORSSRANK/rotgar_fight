@@ -17,22 +17,17 @@ namespace Sources.Model.GameScenario
             
             GameParameters.Timer.Launch();
             
-            Player.ChoosingAttackAsync();
-            
-            Player.ChoosingDefenseAsync();
-            
-            Enemy.ChoosingAttackAsync();
-            
-            Enemy.ChoosingDefenseAsync();
-            
-            while (GameParameters.Timer.Running && (!Enemy.IsReady || !Player.IsReady))
+            Player.PartSelectorChain.StartAllChoosing();
+            Enemy.PartSelectorChain.StartAllChoosing();
+
+            while (GameParameters.Timer.Running && (!Enemy.Readiness.IsReady || !Player.Readiness.IsReady))
                 await Task.Delay(1);
             
-            if (!Enemy.IsReady)
-                Enemy.PushToReady();
+            if (!Enemy.Readiness.IsReady)
+                Enemy.Readiness.PushToReady();
             
-            if (!Player.IsReady)
-                Player.PushToReady();
+            if (!Player.Readiness.IsReady)
+                Player.Readiness.PushToReady();
             
             Player.Attacker.Attack(Enemy);
 
@@ -50,9 +45,9 @@ namespace Sources.Model.GameScenario
 
         private void StopAllGame()
         {
-            Player.UnReady();
+            Player.Readiness.UnReady();
             
-            Enemy.UnReady();
+            Enemy.Readiness.UnReady();
 
             if (GameParameters.Timer.Running)
                 GameParameters.Timer.Stop();

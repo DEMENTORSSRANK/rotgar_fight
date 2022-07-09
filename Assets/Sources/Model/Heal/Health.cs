@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Sources.Model.Heal
 {
-    public class Health
+    public class Health : IReadOnlyHealth
     {
         private readonly float _startValue;
         

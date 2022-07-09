@@ -1,36 +1,32 @@
 ﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Sources.Model.Bodies;
 using Sources.Model.Players;
+using Sources.Model.Players.ReadyControl.Choose;
 
 namespace Sources.Model.Attack
 {
-    public class Attacker : IReadOnlyPlayerAttacker
+    public class Attacker : BodyPartSelector
     {
-        // TODO: Abstract part containers
-        public bool IsReady { get; set; }
-        
+        private readonly BasePlayer _player;
+
         public int Damage { get; }
 
-        public BodyPartType SelectedToAttack { get; private set; }
-        
-        public Attacker(int damage)
+        public Attacker(Body body, int capacity, int damage, BasePlayer player) : base(body, capacity)
         {
             if (damage <= 0)
                 throw new ArgumentOutOfRangeException(nameof(damage));
-            
+
+            _player = player ?? throw new ArgumentNullException(nameof(player));
             Damage = damage;
         }
 
-        public void SelectAttack(BodyPartType partType)
-        {
-            SelectedToAttack = partType;
-            
-            IsReady = true;
-        }
-        
         public void Attack(BasePlayer target)
         {
-            target.GetAttack(SelectedToAttack, Damage);
+            target.DamageTaker.TakeAttack(Chosen.Last(), Damage);
         }
+
+        public override Task<BodyPartType> ChoosePart() => _player.ChooseAttack();
     }
 }

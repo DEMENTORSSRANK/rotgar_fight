@@ -23,7 +23,7 @@ namespace Sources.CompositeRoot
         private PlayerInputRouter _inputRouter;
 
         private PlayerInput _playerInput;
-        
+
         private LocalPlayer _player;
 
         private LocalBot _enemy;
@@ -49,7 +49,7 @@ namespace Sources.CompositeRoot
 
             _gameScreen.PlayerHealthView.SetStart(_player.Health.Value);
             _gameScreen.EnemyHealthView.SetStart(_enemy.Health.Value);
-            
+
             _scenario.GameEnd += delegate(bool b) { print($"Game end ({b})"); };
         }
 
@@ -58,10 +58,10 @@ namespace Sources.CompositeRoot
             _inputRouter.Subscribe();
 
             _timer.RemainSecondsChanged += _gameScreen.RemainTimeView.UpdateRemain;
-            
+
             _playerInput.AttackChosen += _player.InputAttack;
             _playerInput.DefenseChosen += _player.InputDefense;
-            _playerInput.GotReady += _player.MakeReady;
+            _playerInput.GotReady += _player.Readiness.MakeReady;
 
             _player.Health.ValueChanged += _gameScreen.PlayerHealthView.UpdateHealth;
             _enemy.Health.ValueChanged += _gameScreen.EnemyHealthView.UpdateHealth;
@@ -77,11 +77,11 @@ namespace Sources.CompositeRoot
             _inputRouter.UnSubscribe();
 
             _timer.RemainSecondsChanged -= _gameScreen.RemainTimeView.UpdateRemain;
-            
+
             _playerInput.AttackChosen -= _player.InputAttack;
             _playerInput.DefenseChosen -= _player.InputDefense;
-            _playerInput.GotReady -= _player.MakeReady;
-            
+            _playerInput.GotReady -= _player.Readiness.MakeReady;
+
             _player.Health.ValueChanged -= _gameScreen.PlayerHealthView.UpdateHealth;
             _enemy.Health.ValueChanged -= _gameScreen.EnemyHealthView.UpdateHealth;
         }
@@ -90,9 +90,14 @@ namespace Sources.CompositeRoot
         private void OnApplicationQuit()
         {
 #if UNITY_EDITOR
-            var constructor = SynchronizationContext.Current.GetType()
+            ConstructorInfo constructor = SynchronizationContext.Current.GetType()
                 .GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] {typeof(int)}, null);
-            var newContext = constructor.Invoke(new object[] {Thread.CurrentThread.ManagedThreadId});
+
+            if (constructor == null)
+                return;
+
+            object newContext = constructor.Invoke(new object[] {Thread.CurrentThread.ManagedThreadId});
+            
             SynchronizationContext.SetSynchronizationContext(newContext as SynchronizationContext);
 #endif
         }

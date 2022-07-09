@@ -14,6 +14,11 @@ namespace Sources.Model.Players
 
         private bool _waitingAttack;
 
+        public LocalPlayer(Body body, int startHealth, int damage, int defenceCapacity) : base(body, startHealth,
+            damage, defenceCapacity)
+        {
+        }
+
         public void InputDefense(BodyPartType partType)
         {
             if (!_waitingDefense)
@@ -34,12 +39,7 @@ namespace Sources.Model.Players
             _waitingAttack = false;
         }
 
-        public LocalPlayer(Body body, int startHealth, int damage, int defenceCapacity) : base(body, startHealth,
-            damage, defenceCapacity)
-        {
-        }
-
-        protected override async Task<BodyPartType> ChooseDefense()
+        public override async Task<BodyPartType> ChooseDefense()
         {
             _waitingDefense = true;
 
@@ -49,7 +49,7 @@ namespace Sources.Model.Players
             return _defense;
         }
 
-        protected override async Task<BodyPartType> ChooseAttack()
+        public override async Task<BodyPartType> ChooseAttack()
         {
             _waitingAttack = true;
 
