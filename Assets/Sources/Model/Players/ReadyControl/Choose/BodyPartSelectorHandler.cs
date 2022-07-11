@@ -30,7 +30,10 @@ namespace Sources.Model.Players.ReadyControl.Choose
                 if (!IsChoosing)
                     break;
 
-                Selector.SelectNew(chosen);
+                if (Selector.Contains(chosen))
+                    Selector.Unselect(chosen);
+                else
+                    Selector.SelectNew(chosen);
             }
         }
 

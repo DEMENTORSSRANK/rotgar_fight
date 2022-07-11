@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using Sources.Model.Parameters;
-using UnityEngine;
 
 namespace Sources.Model.GameScenario
 {
@@ -13,8 +12,6 @@ namespace Sources.Model.GameScenario
         
         protected override async Task ProcessMoveAsync()
         {
-            Debug.Log("Move started");
-            
             GameParameters.Timer.Launch();
             
             Player.PartSelectorChain.StartAllChoosing();

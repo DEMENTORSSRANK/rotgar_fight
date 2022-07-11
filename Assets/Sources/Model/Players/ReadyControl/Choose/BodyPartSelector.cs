@@ -7,15 +7,15 @@ namespace Sources.Model.Players.ReadyControl.Choose
 {
     public abstract class BodyPartSelector : ReadyHandler
     {
-        protected readonly Body Body;
-        
         private readonly BodyPartTypeGenerator _typeGenerator;
+        
+        protected readonly Body Body;
         
         public override bool IsReady => Count >= _capacity;
 
         private readonly int _capacity;
         
-        private readonly Queue<BodyPartType> _chosen = new Queue<BodyPartType>();
+        private readonly List<BodyPartType> _chosen = new List<BodyPartType>();
 
         public IEnumerable<BodyPartType> Chosen => _chosen;
 
@@ -37,12 +37,20 @@ namespace Sources.Model.Players.ReadyControl.Choose
 
         public void SelectNew(BodyPartType partType)
         {
-            if (_chosen.Contains(partType))
+            if (Contains(partType))
                 throw new InvalidOperationException($"{partType.ToString()} is already defenced");
 
-            _chosen.Enqueue(partType);
+            _chosen.Add(partType);
 
             ValidateCapacity();
+        }
+
+        public void Unselect(BodyPartType partType)
+        {
+            if (!Contains(partType))
+                throw new InvalidOperationException($"{partType} doesn't contains");
+
+            _chosen.Remove(partType);
         }
 
         public void ClearAll()
@@ -54,7 +62,7 @@ namespace Sources.Model.Players.ReadyControl.Choose
         {
             while (_chosen.Count > _capacity)
             {
-                _chosen.Dequeue();
+                _chosen.RemoveAt(0);
             }
         }
 
