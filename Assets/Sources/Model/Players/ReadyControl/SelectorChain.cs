@@ -9,6 +9,8 @@ namespace Sources.Model.Players.ReadyControl
         private readonly BodyPartSelectorHandler[] _handlers;
 
         public override bool IsReady => _handlers.All(x => x.IsChoosing);
+        
+        public override event Action ReadyChanged;
 
         public event Action StartedChoose;
 
@@ -30,6 +32,8 @@ namespace Sources.Model.Players.ReadyControl
             }
             
             StartedChoose?.Invoke();
+            
+            ReadyChanged?.Invoke();
         }
 
         public void StopAllChoosing()
@@ -40,6 +44,8 @@ namespace Sources.Model.Players.ReadyControl
             }
             
             StoppedChoose?.Invoke();
+            
+            ReadyChanged?.Invoke();
         }
 
         public override void OnReady()

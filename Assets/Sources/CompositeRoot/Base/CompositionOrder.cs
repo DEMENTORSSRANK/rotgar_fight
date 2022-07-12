@@ -15,7 +15,7 @@ namespace Sources.CompositeRoot.Base
         private void OnEnable()
         {
             foreach (var root in _roots)
-                root.Enable();
+                root.Initialize();
         }
 
         private void OnDisable()

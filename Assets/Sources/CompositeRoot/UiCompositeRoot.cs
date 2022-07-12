@@ -25,20 +25,21 @@ namespace Sources.CompositeRoot
             _inputButtons.Init();
             _gameScreen.PlayerHealthView.SetStart(_fight.Player.Health.Value);
             _gameScreen.EnemyHealthView.SetStart(_fight.Bot.Health.Value);
+            _gameScreen.RemainTimeView.UpdateRemain(_fight.Timer.RemainSeconds);
         }
 
-        public override void Enable()
+        public override void Initialize()
         {
             _fight.Timer.RemainSecondsChanged += _gameScreen.RemainTimeView.UpdateRemain;
 
             Player.Health.ValueChanged += _gameScreen.PlayerHealthView.UpdateHealth;
             Bot.Health.ValueChanged += _gameScreen.EnemyHealthView.UpdateHealth;
 
-            Player.Attacker.OnSelected += _inputButtons.View.ChooseAttack;
-            Player.Attacker.OnUnSelected += _inputButtons.View.UnChooseAttack;
+            Player.Attacker.OnSelected += _inputButtons.Chooser.ChooseAttack;
+            Player.Attacker.OnUnSelected += _inputButtons.Chooser.UnChooseAttack;
 
-            Player.Defender.OnSelected += _inputButtons.View.ChooseDefense;
-            Player.Defender.OnUnSelected += _inputButtons.View.UnChooseDefense;
+            Player.Defender.OnSelected += _inputButtons.Chooser.ChooseDefense;
+            Player.Defender.OnUnSelected += _inputButtons.Chooser.UnChooseDefense;
 
             Player.Readiness.OnReady += _gameScreen.ReadyView.OnPlayerReady;
             Player.Readiness.OnUnReady += _gameScreen.ReadyView.OnPlayerUnReady;
@@ -48,6 +49,11 @@ namespace Sources.CompositeRoot
 
             Player.PartSelectorChain.StartedChoose += _gameScreen.ReadyView.OnStartChoosing;
             Player.PartSelectorChain.StoppedChoose += _gameScreen.ReadyView.OnStopChoosing;
+
+            Player.PartSelectorChain.StartedChoose += _inputButtons.Activator.OnStartChoosing;
+            Player.PartSelectorChain.StoppedChoose += _inputButtons.Activator.OnEndChoosing;
+
+            Player.Readiness.AvailableToReadyChanged += _inputButtons.Activator.UpdateAvailableIsReady;
         }
 
         public override void Dispose()
@@ -57,11 +63,11 @@ namespace Sources.CompositeRoot
             Player.Health.ValueChanged -= _gameScreen.PlayerHealthView.UpdateHealth;
             Bot.Health.ValueChanged -= _gameScreen.EnemyHealthView.UpdateHealth;
             
-            Player.Attacker.OnSelected -= _inputButtons.View.ChooseAttack;
-            Player.Attacker.OnUnSelected -= _inputButtons.View.UnChooseAttack;
+            Player.Attacker.OnSelected -= _inputButtons.Chooser.ChooseAttack;
+            Player.Attacker.OnUnSelected -= _inputButtons.Chooser.UnChooseAttack;
 
-            Player.Defender.OnSelected -= _inputButtons.View.ChooseDefense;
-            Player.Defender.OnUnSelected -= _inputButtons.View.UnChooseDefense;
+            Player.Defender.OnSelected -= _inputButtons.Chooser.ChooseDefense;
+            Player.Defender.OnUnSelected -= _inputButtons.Chooser.UnChooseDefense;
             
             Player.Readiness.OnReady -= _gameScreen.ReadyView.OnPlayerReady;
             Player.Readiness.OnUnReady -= _gameScreen.ReadyView.OnPlayerUnReady;
@@ -71,6 +77,11 @@ namespace Sources.CompositeRoot
 
             Player.PartSelectorChain.StartedChoose -= _gameScreen.ReadyView.OnStartChoosing;
             Player.PartSelectorChain.StoppedChoose -= _gameScreen.ReadyView.OnStopChoosing;
+            
+            Player.PartSelectorChain.StartedChoose -= _inputButtons.Activator.OnStartChoosing;
+            Player.PartSelectorChain.StoppedChoose -= _inputButtons.Activator.OnEndChoosing;
+            
+            Player.Readiness.AvailableToReadyChanged -= _inputButtons.Activator.UpdateAvailableIsReady;
         }
     }
 }

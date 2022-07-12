@@ -23,7 +23,7 @@ namespace Sources.CompositeRoot
             _inputRouter = new PlayerInputRouter(_ui.InputSender, _playerInput);
         }
 
-        public override void Enable()
+        public override void Initialize()
         {
             _inputRouter.Subscribe();
             

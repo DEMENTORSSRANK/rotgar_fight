@@ -22,7 +22,7 @@ namespace Sources.Model.Players
         public Attacker Attacker { get; }
 
         public Readiness Readiness { get; }
-        
+
         public DamageTaker DamageTaker { get; }
 
         public SelectorChain PartSelectorChain { get; }

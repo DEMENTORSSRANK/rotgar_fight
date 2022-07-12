@@ -9,7 +9,7 @@ namespace Sources.CompositeRoot.Base
             
         }
 
-        public virtual void Enable()
+        public virtual void Initialize()
         {
             
         }

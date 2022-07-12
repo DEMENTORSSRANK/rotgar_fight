@@ -6,18 +6,34 @@ namespace Sources.Model.Players.ReadyControl
     public class Readiness
     {
         private readonly ReadyHandler[] _handlers;
-        
+
         public bool AvailableToReady => _handlers.All(x => x.IsReady);
-        
+
         public bool IsReady { get; private set; }
 
         public event Action OnReady;
 
         public event Action OnUnReady;
 
+        public event Action<bool> AvailableToReadyChanged; 
+
         public Readiness(params ReadyHandler[] handlers)
         {
             _handlers = handlers ?? throw new ArgumentNullException(nameof(handlers));
+            
+            SubscribeUpdate();
+        }
+
+        public void SubscribeUpdate()
+        {
+            foreach (var handler in _handlers)
+                handler.ReadyChanged += OnAvailableToReadyChanged;
+        }
+
+        public void UnSubscribeUpdate()
+        {
+            foreach (var handler in _handlers)
+                handler.ReadyChanged -= OnAvailableToReadyChanged;
         }
         
         public void PushToReady()
@@ -28,7 +44,7 @@ namespace Sources.Model.Players.ReadyControl
             if (AvailableToReady)
             {
                 MakeReady();
-                
+
                 return;
             }
 
@@ -39,12 +55,12 @@ namespace Sources.Model.Players.ReadyControl
 
             MakeReady();
         }
-        
+
         public void MakeReady()
         {
             if (!AvailableToReady)
                 throw new InvalidOperationException("Not all available to ready");
-            
+
             if (IsReady)
                 throw new InvalidOperationException("Already ready");
 
@@ -52,15 +68,20 @@ namespace Sources.Model.Players.ReadyControl
 
             foreach (var handler in _handlers)
                 handler.OnReady();
-            
+
             OnReady?.Invoke();
         }
 
         public void UnReady()
         {
             IsReady = false;
-            
+
             OnUnReady?.Invoke();
+        }
+
+        private void OnAvailableToReadyChanged()
+        {
+            AvailableToReadyChanged?.Invoke(AvailableToReady);
         }
     }
 }

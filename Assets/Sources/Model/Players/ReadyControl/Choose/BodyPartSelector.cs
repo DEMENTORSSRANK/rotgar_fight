@@ -25,6 +25,8 @@ namespace Sources.Model.Players.ReadyControl.Choose
 
         public event Action<BodyPartType> OnUnSelected;
 
+        public override event Action ReadyChanged;
+
         protected BodyPartSelector(Body body, int capacity)
         {
             if (capacity <= 0)
@@ -49,6 +51,8 @@ namespace Sources.Model.Players.ReadyControl.Choose
             ValidateCapacity();
             
             OnSelected?.Invoke(partType);
+
+            ReadyChanged?.Invoke();
         }
 
         public void Unselect(BodyPartType partType)
@@ -59,6 +63,8 @@ namespace Sources.Model.Players.ReadyControl.Choose
             _chosen.Remove(partType);
             
             OnUnSelected?.Invoke(partType);
+            
+            ReadyChanged?.Invoke();
         }
 
         public void ClearAll()
