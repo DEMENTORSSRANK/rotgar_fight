@@ -10,5 +10,9 @@ namespace Sources.Model.Parameters
         BasePlayer Player { get; }
         
         BasePlayer Enemy { get; }
+        
+        float AttackDelay { get; }
+        
+        float MoveDelay { get; }
     }
 }

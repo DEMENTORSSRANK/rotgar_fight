@@ -359,11 +359,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bones:
-  - _bone: {fileID: 776659278632221235}
+  - _bone: {fileID: 5543605645791369806}
     _partType: 0
-  - _bone: {fileID: 3218652398489185928}
+  - _bone: {fileID: 5095935290837788918}
     _partType: 1
-  - _bone: {fileID: 2037001459468131174}
+  - _bone: {fileID: 7771873723607833538}
     _partType: 2
   - _bone: {fileID: 8033282407080500103}
     _partType: 3

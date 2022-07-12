@@ -11,6 +11,10 @@ namespace Sources.Model.Players.ReadyControl
         
         public bool IsReady { get; private set; }
 
+        public event Action OnReady;
+
+        public event Action OnUnReady;
+
         public Readiness(params ReadyHandler[] handlers)
         {
             _handlers = handlers ?? throw new ArgumentNullException(nameof(handlers));
@@ -48,11 +52,15 @@ namespace Sources.Model.Players.ReadyControl
 
             foreach (var handler in _handlers)
                 handler.OnReady();
+            
+            OnReady?.Invoke();
         }
 
         public void UnReady()
         {
             IsReady = false;
+            
+            OnUnReady?.Invoke();
         }
     }
 }

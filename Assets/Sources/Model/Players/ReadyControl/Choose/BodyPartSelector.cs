@@ -20,6 +20,10 @@ namespace Sources.Model.Players.ReadyControl.Choose
         public IEnumerable<BodyPartType> Chosen => _chosen;
 
         public int Count => _chosen.Count;
+        
+        public event Action<BodyPartType> OnSelected;
+
+        public event Action<BodyPartType> OnUnSelected;
 
         protected BodyPartSelector(Body body, int capacity)
         {
@@ -43,6 +47,8 @@ namespace Sources.Model.Players.ReadyControl.Choose
             _chosen.Add(partType);
 
             ValidateCapacity();
+            
+            OnSelected?.Invoke(partType);
         }
 
         public void Unselect(BodyPartType partType)
@@ -51,18 +57,23 @@ namespace Sources.Model.Players.ReadyControl.Choose
                 throw new InvalidOperationException($"{partType} doesn't contains");
 
             _chosen.Remove(partType);
+            
+            OnUnSelected?.Invoke(partType);
         }
 
         public void ClearAll()
         {
-            _chosen.Clear();
+            while (_chosen.Count > 0)
+            {
+                Unselect(_chosen[0]);
+            }
         }
         
         private void ValidateCapacity()
         {
             while (_chosen.Count > _capacity)
             {
-                _chosen.RemoveAt(0);
+                Unselect(_chosen[0]);
             }
         }
 

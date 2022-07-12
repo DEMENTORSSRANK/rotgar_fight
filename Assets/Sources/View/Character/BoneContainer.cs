@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Sources.Model.Bodies;
 using UnityEngine;
@@ -9,10 +10,12 @@ namespace Sources.View.Character
     {
         [SerializeField] private BoneOfPartType[] _bones;
 
+        public IEnumerable<BoneOfPartType> Bones => _bones;
+        
         public Transform GetBoneOfPartType(BodyPartType partType) => _bones.First(x => x.PartType == partType).Bone;
 
         [Serializable]
-        private struct BoneOfPartType
+        public struct BoneOfPartType
         {
             [SerializeField] private Transform _bone;
 

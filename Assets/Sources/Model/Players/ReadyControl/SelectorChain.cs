@@ -10,6 +10,10 @@ namespace Sources.Model.Players.ReadyControl
 
         public override bool IsReady => _handlers.All(x => x.IsChoosing);
 
+        public event Action StartedChoose;
+
+        public event Action StoppedChoose;
+
         public SelectorChain(params BodyPartSelectorHandler[] handlers)
         {
             _handlers = handlers ?? throw new ArgumentNullException(nameof(handlers));
@@ -24,6 +28,8 @@ namespace Sources.Model.Players.ReadyControl
             {
                 handler.StartChoosingAsync();
             }
+            
+            StartedChoose?.Invoke();
         }
 
         public void StopAllChoosing()
@@ -32,6 +38,8 @@ namespace Sources.Model.Players.ReadyControl
             {
                 handler.StopChoosing();
             }
+            
+            StoppedChoose?.Invoke();
         }
 
         public override void OnReady()

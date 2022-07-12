@@ -1,5 +1,6 @@
 ﻿using Sources.Input;
 using Sources.Model.Players;
+using Sources.View.UserInterface.Elements.Game.Input;
 using UnityEngine;
 
 namespace Sources.CompositeRoot
@@ -19,8 +20,7 @@ namespace Sources.CompositeRoot
         public override void Compose()
         {
             _playerInput = new PlayerInput();
-            
-            _inputRouter = new PlayerInputRouter(_ui.Input, _playerInput);
+            _inputRouter = new PlayerInputRouter(_ui.InputSender, _playerInput);
         }
 
         public override void Enable()

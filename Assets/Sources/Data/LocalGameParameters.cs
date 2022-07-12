@@ -9,6 +9,12 @@ namespace Sources.Data
     [CreateAssetMenu(fileName = "New game parameters", menuName = "Game/Parameters", order = 0)]
     public class LocalGameParameters : ScriptableObject
     {
+        [Min(0)] [SerializeField] private float _attackDelay = 1f;
+
+        [Min(0)] [SerializeField] private float _moveDelay = 2f;
+
+        [SerializeField] private PartTypeWithPercentsDamage[] _partTypeWithPercents;
+
         [Min(1)] [SerializeField] private int _defenseChooseCapacity = 1;
 
         [Min(1)] [SerializeField] private int _attackChooseCapacity = 1;
@@ -17,14 +23,17 @@ namespace Sources.Data
 
         [Min(1)] [SerializeField] private int _health = 1;
 
-        [Min(0)] [SerializeField] private float _minBotThinkTime = .5f;
-
         [Min(1)] [SerializeField] private int _moveSeconds = 1;
+
+        [Header("Bot")] [Min(0)] [SerializeField]
+        private float _minBotThinkTime = .5f;
 
         [OnValueChanged(nameof(OnMaxBotThinkTimeChanged))] [Min(0)] [SerializeField]
         private float _maxBotThinkTime = 1;
 
-        [SerializeField] private PartTypeWithPercentsDamage[] _partTypeWithPercents;
+        public float AttackDelay => _attackDelay;
+
+        public float MoveDelay => _moveDelay;
 
         public int MoveSeconds => _moveSeconds;
 

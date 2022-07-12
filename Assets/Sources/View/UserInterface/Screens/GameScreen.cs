@@ -1,5 +1,4 @@
 ﻿using System;
-using Sources.Input;
 using Sources.View.UserInterface.Elements.Game;
 using Sources.View.UserInterface.SpritesAlphabet;
 using UnityEngine;
@@ -8,15 +7,13 @@ namespace Sources.View.UserInterface.Screens
 {
     public class GameScreen : MonoBehaviour
     {
-        [SerializeField] private InputButtons _inputButtons;
-
         [SerializeField] private TimerView _remainTimeView;
 
         [SerializeField] private HealthBar _playerHealthView;
 
         [SerializeField] private HealthBar _enemyHealthView;
 
-        public IPlayerInputSender Input => _inputButtons;
+        [SerializeField] private ReadyView _readyView;
 
         public TimerView RemainTimeView => _remainTimeView;
 
@@ -24,9 +21,11 @@ namespace Sources.View.UserInterface.Screens
 
         public HealthBar EnemyHealthView => _enemyHealthView;
 
+        public ReadyView ReadyView => _readyView;
+
         private void Start()
         {
-            _inputButtons.Start();
+            _readyView.InActiveAll();
         }
 
         [Serializable]

@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Sources.Extensions;
 using Sources.Model.Parameters;
 
 namespace Sources.Model.GameScenario
@@ -12,6 +13,8 @@ namespace Sources.Model.GameScenario
         
         protected override async Task ProcessMoveAsync()
         {
+            await Task.Delay(GameParameters.MoveDelay.ToMilliseconds());
+            
             GameParameters.Timer.Launch();
             
             Player.PartSelectorChain.StartAllChoosing();
@@ -35,8 +38,12 @@ namespace Sources.Model.GameScenario
                 return;
             }
 
+            await Task.Delay(GameParameters.AttackDelay.ToMilliseconds());
+
             Enemy.Attacker.Attack(Player);
 
+            await Task.Delay(GameParameters.AttackDelay.ToMilliseconds());
+            
             StopAllGame();
         }
 
