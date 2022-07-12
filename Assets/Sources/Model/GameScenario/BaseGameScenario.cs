@@ -15,10 +15,13 @@ namespace Sources.Model.GameScenario
         
         public bool IsCompleting { get; private set; }
 
-        /// <summary>
-        /// True - win, False - lose
-        /// </summary>
-        public event Action<bool> GameEnd;
+        public event Action GameStarted;
+        
+        public event Action GameEnd;
+
+        public event Action Defeat;
+
+        public event Action Won;
 
         protected BaseGameScenario(IGameParameters gameParameters)
         {
@@ -30,13 +33,23 @@ namespace Sources.Model.GameScenario
             if (IsCompleting)
                 throw new InvalidOperationException("Scenario is already completing now");
 
+            GameParameters.Player.Health.ResetToStartValue();
+            
+            GameParameters.Enemy.Health.ResetToStartValue();
+            
             IsCompleting = true;
+            
+            GameStarted?.Invoke();
             
             await GameCompletingAsync();
 
             IsCompleting = false;
+
+            Action action = IsPlayerWin ? Won : Defeat;
             
-            GameEnd?.Invoke(IsPlayerWin);
+            action?.Invoke();
+            
+            GameEnd?.Invoke();
         }
 
         private async Task GameCompletingAsync()

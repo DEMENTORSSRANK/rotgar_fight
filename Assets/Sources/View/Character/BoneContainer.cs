@@ -6,7 +6,8 @@ using UnityEngine;
 
 namespace Sources.View.Character
 {
-    public class BoneContainer : MonoBehaviour
+    [Serializable]
+    public class BoneContainer
     {
         [SerializeField] private BoneOfPartType[] _bones;
 

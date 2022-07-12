@@ -3,13 +3,15 @@ using Sources.Model.Bodies;
 using Sources.Model.Heal;
 using Sources.Model.Players;
 
-namespace Sources.Model.Attack
+namespace Sources.Model.Defence
 {
     public class DamageTaker
     {
         private readonly BasePlayer _player;
 
         private readonly Health _health;
+
+        public event Action Blocked;
 
         public DamageTaker(BasePlayer player, Health health)
         {
@@ -21,8 +23,15 @@ namespace Sources.Model.Attack
         {
             if (damage < 0)
                 throw new ArgumentOutOfRangeException(nameof(damage));
-            
+
             float resultDamage = damage * _player.Defender.CalculateDamageModifierOfPart(partType);
+            
+            if (Math.Abs(resultDamage) < .1f)
+            {
+                Blocked?.Invoke();
+                
+                return;
+            }
 
             _health.ApplyDamage(resultDamage);
         }

@@ -11,5 +11,7 @@ namespace Sources.Model.Heal
         event Action<float> ValueChanged;
 
         event Action Dead;
+
+        void ResetToStartValue();
     }
 }

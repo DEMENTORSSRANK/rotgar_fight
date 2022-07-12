@@ -17,6 +17,9 @@ namespace Sources.View.UserInterface.SpritesAlphabet
 
         public void GenerateText(object input)
         {
+            if (_text == null)
+                _text = GetComponent<TextMeshProUGUI>();
+            
             _builder.Clear();
 
             foreach (var symbol in input.ToString())

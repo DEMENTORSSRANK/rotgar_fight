@@ -23,6 +23,9 @@ namespace Sources.Model.GameScenario
             while (GameParameters.Timer.Running && (!Enemy.Readiness.IsReady || !Player.Readiness.IsReady))
                 await Task.Delay(1);
             
+            if (GameParameters.Timer.Running)
+                GameParameters.Timer.Stop();
+            
             if (!Enemy.Readiness.IsReady)
                 Enemy.Readiness.PushToReady();
             
@@ -52,9 +55,6 @@ namespace Sources.Model.GameScenario
             Player.Readiness.UnReady();
             
             Enemy.Readiness.UnReady();
-
-            if (GameParameters.Timer.Running)
-                GameParameters.Timer.Stop();
         }
     }
 }

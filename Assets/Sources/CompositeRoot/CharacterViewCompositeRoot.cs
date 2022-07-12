@@ -1,21 +1,55 @@
-﻿using Sources.View.Character;
+﻿using Sources.Model.Players;
+using Sources.View.Character;
 using UnityEngine;
 
 namespace Sources.CompositeRoot
 {
     public class CharacterViewCompositeRoot : Base.CompositeRoot
     {
-        [SerializeField] private BoneContainer _playerContainer;
+        [SerializeField] private LocalPlayersCompositeRoot _players;
 
-        [SerializeField] private BoneContainer _enemyContainer;
+        [SerializeField] private LocalFightCompositeRoot _fight;
+        
+        [SerializeField] private SpineController _spinePlayer;
 
-        public BoneContainer PlayerContainer => _playerContainer;
+        [SerializeField] private SpineController _spineEnemy;
 
-        public BoneContainer EnemyContainer => _enemyContainer;
+        private BasePlayer Player => _players.Player;
 
-        public override void Compose()
+        private BasePlayer Enemy => _players.Enemy;
+
+        private SpineAnimator PlayerAnimator => _spinePlayer.Animator;
+
+        private SpineAnimator EnemyAnimator => _spineEnemy.Animator;
+        
+        public override void Initialize()
         {
+            Player.Attacker.Attacked += PlayerAnimator.AttackToBodyPart;
+            Enemy.Attacker.Attacked += EnemyAnimator.AttackToBodyPart;
+
+            Player.DamageTaker.Blocked += PlayerAnimator.Block;
+            Enemy.DamageTaker.Blocked += EnemyAnimator.Block;
+
+            Player.Health.Dead += PlayerAnimator.Die;
+            Enemy.Health.Dead += EnemyAnimator.Die;
+
+            _fight.Scenario.GameStarted += PlayerAnimator.ToIdle;
+            _fight.Scenario.GameStarted += EnemyAnimator.ToIdle;
+        }
+
+        public override void Dispose()
+        {
+            Player.Attacker.Attacked -= _spinePlayer.Animator.AttackToBodyPart;
+            Enemy.Attacker.Attacked -= _spineEnemy.Animator.AttackToBodyPart;
             
+            Player.DamageTaker.Blocked -= PlayerAnimator.Block;
+            Enemy.DamageTaker.Blocked -= EnemyAnimator.Block;
+            
+            Player.Health.Dead -= PlayerAnimator.Die;
+            Enemy.Health.Dead -= EnemyAnimator.Die;
+            
+            _fight.Scenario.GameStarted -= PlayerAnimator.ToIdle;
+            _fight.Scenario.GameStarted -= EnemyAnimator.ToIdle;
         }
     }
 }

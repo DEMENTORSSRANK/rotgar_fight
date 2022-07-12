@@ -14,10 +14,10 @@ namespace Sources.CompositeRoot
     {
         [SerializeField] private LocalPlayersCompositeRoot _localPlayers;
 
-        private LocalGameScenario _scenario;
-
         private LocalGameParameters GameParameters => _localPlayers.Parameters;
 
+        public LocalGameScenario Scenario { get; private set; }
+        
         public LocalTimer Timer { get; private set; }
 
         public LocalPlayer Player => _localPlayers.Player;
@@ -30,14 +30,13 @@ namespace Sources.CompositeRoot
 
             var gameParameters =
                 new GameParameters(Timer, Player, Bot, GameParameters.AttackDelay, GameParameters.MoveDelay);
-            _scenario = new LocalGameScenario(gameParameters);
-
-            _scenario.GameEnd += delegate(bool b) { print($"Game end ({b})"); };
+            
+            Scenario = new LocalGameScenario(gameParameters);
         }
 
         private void Start()
         {
-            _scenario.StartAsync();
+            Scenario.StartAsync();
         }
 
         private void OnApplicationQuit()

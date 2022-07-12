@@ -1,5 +1,6 @@
 ﻿using Sources.Input;
 using Sources.Model.Players;
+using Sources.View.UserInterface.Elements.Game;
 using Sources.View.UserInterface.Elements.Game.Input;
 using Sources.View.UserInterface.Screens;
 using UnityEngine;
@@ -14,6 +15,12 @@ namespace Sources.CompositeRoot
 
         [SerializeField] private InputButtons _inputButtons;
 
+        [SerializeField] private WinScreen _win;
+
+        [SerializeField] private LoseScreen _lose;
+
+        private EndScreenLogicView _endScreenLogicView;
+        
         private LocalPlayer Player => _fight.Player;
 
         private LocalBot Bot => _fight.Bot;
@@ -26,6 +33,7 @@ namespace Sources.CompositeRoot
             _gameScreen.PlayerHealthView.SetStart(_fight.Player.Health.Value);
             _gameScreen.EnemyHealthView.SetStart(_fight.Bot.Health.Value);
             _gameScreen.RemainTimeView.UpdateRemain(_fight.Timer.RemainSeconds);
+            _endScreenLogicView = new EndScreenLogicView(_win, _lose);
         }
 
         public override void Initialize()
@@ -54,6 +62,15 @@ namespace Sources.CompositeRoot
             Player.PartSelectorChain.StoppedChoose += _inputButtons.Activator.OnEndChoosing;
 
             Player.Readiness.AvailableToReadyChanged += _inputButtons.Activator.UpdateAvailableIsReady;
+
+            _fight.Scenario.Defeat += _endScreenLogicView.OnDefeat;
+            _fight.Scenario.Won += _endScreenLogicView.OnWon;
+
+            _win.RestartClicked += _fight.Scenario.StartAsync;
+            _lose.RestartClicked += _fight.Scenario.StartAsync;
+
+            _win.RestartClicked += _endScreenLogicView.CloseAll;
+            _lose.RestartClicked += _endScreenLogicView.CloseAll;
         }
 
         public override void Dispose()
@@ -82,6 +99,15 @@ namespace Sources.CompositeRoot
             Player.PartSelectorChain.StoppedChoose -= _inputButtons.Activator.OnEndChoosing;
             
             Player.Readiness.AvailableToReadyChanged -= _inputButtons.Activator.UpdateAvailableIsReady;
+            
+            _fight.Scenario.Defeat -= _endScreenLogicView.OnDefeat;
+            _fight.Scenario.Won -= _endScreenLogicView.OnWon;
+            
+            _win.RestartClicked -= _fight.Scenario.StartAsync;
+            _lose.RestartClicked -= _fight.Scenario.StartAsync;
+            
+            _win.RestartClicked -= _endScreenLogicView.CloseAll;
+            _lose.RestartClicked -= _endScreenLogicView.CloseAll;
         }
     }
 }

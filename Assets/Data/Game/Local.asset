@@ -12,13 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95b7969f1e143dab891b3aa4486d956, type: 3}
   m_Name: Local
   m_EditorClassIdentifier: 
-  _defenseChooseCapacity: 2
-  _attackChooseCapacity: 1
-  _damage: 10
-  _health: 100
-  _minBotThinkTime: 0.5
-  _moveSeconds: 20
-  _maxBotThinkTime: 1.5
+  _attackDelay: 2
+  _moveDelay: 0.5
   _partTypeWithPercents:
   - _partType: 0
     _percents: 170
@@ -30,3 +25,10 @@ MonoBehaviour:
     _percents: 100
   - _partType: 4
     _percents: 50
+  _defenseChooseCapacity: 2
+  _attackChooseCapacity: 1
+  _damage: 10
+  _health: 100
+  _moveSeconds: 20
+  _minBotThinkTime: 0.5
+  _maxBotThinkTime: 1.5
