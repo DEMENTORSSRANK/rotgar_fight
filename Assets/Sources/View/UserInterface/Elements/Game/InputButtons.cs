@@ -1,6 +1,7 @@
 ﻿using System;
 using Sources.Input;
 using Sources.Model.Bodies;
+using Sources.View.Character;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,16 @@ namespace Sources.View.UserInterface.Elements.Game
         public event Action<BodyPartType> OnDefenseChosen;
 
         public event Action OnGetReady;
+
+        public void UpdatePlayerBoneContainer(BoneContainer boneContainer)
+        {
+            
+        }
+
+        public void UpdateEnemyBoneContainer(BoneContainer boneContainer)
+        {
+            
+        }
 
         public void UpdatePlayerBody(Body body)
         {

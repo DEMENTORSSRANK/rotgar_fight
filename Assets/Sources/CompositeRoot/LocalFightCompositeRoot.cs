@@ -2,91 +2,43 @@
 using System.Reflection;
 using System.Threading;
 using Sources.Data;
-using Sources.Input;
 using Sources.Model.GameScenario;
 using Sources.Model.Parameters;
 using Sources.Model.Players;
 using Sources.Model.Time;
-using Sources.View.UserInterface.Screens;
 using UnityEngine;
 
 namespace Sources.CompositeRoot
 {
-    public class LocalFightCompositeRoot : MonoBehaviour
+    public class LocalFightCompositeRoot : Base.CompositeRoot
     {
-        [SerializeField] private LocalGameParameters _localGameParameters;
-
-        [SerializeField] private GameScreen _gameScreen;
+        [SerializeField] private LocalPlayersCompositeRoot _localPlayers;
 
         private LocalGameScenario _scenario;
 
-        private PlayerInputRouter _inputRouter;
+        private LocalGameParameters GameParameters => _localPlayers.Parameters;
 
-        private PlayerInput _playerInput;
+        public LocalTimer Timer { get; private set; }
+        
+        public LocalPlayer Player => _localPlayers.Player;
 
-        private LocalPlayer _player;
+        public LocalBot Bot => _localPlayers.Enemy;
 
-        private LocalBot _enemy;
-
-        private LocalTimer _timer;
-
-        private void Awake()
+        public override void Compose()
         {
-            _player = new LocalPlayer(_localGameParameters.GenerateBaseBody(), _localGameParameters.Health,
-                _localGameParameters.Damage, _localGameParameters.DefenseChooseCapacity);
+            Timer = new LocalTimer(GameParameters.MoveSeconds);
 
-            _enemy = new LocalBot(_localGameParameters.GenerateBaseBody(), _localGameParameters.Health,
-                _localGameParameters.Damage, _localGameParameters.DefenseChooseCapacity,
-                new TimeRange(_localGameParameters.MinBotThinkTime, _localGameParameters.MaxBotThinkTime));
-
-            _timer = new LocalTimer(_localGameParameters.MoveSeconds);
-
-            var gameParameters = new GameParameters(_timer, _player, _enemy);
+            var gameParameters = new GameParameters(Timer, Player, Bot);
             _scenario = new LocalGameScenario(gameParameters);
 
-            _playerInput = new PlayerInput();
-            _inputRouter = new PlayerInputRouter(_gameScreen.Input, _playerInput);
-
-            _gameScreen.PlayerHealthView.SetStart(_player.Health.Value);
-            _gameScreen.EnemyHealthView.SetStart(_enemy.Health.Value);
-
             _scenario.GameEnd += delegate(bool b) { print($"Game end ({b})"); };
-        }
-
-        private void OnEnable()
-        {
-            _inputRouter.Subscribe();
-
-            _timer.RemainSecondsChanged += _gameScreen.RemainTimeView.UpdateRemain;
-
-            _playerInput.AttackChosen += _player.InputAttack;
-            _playerInput.DefenseChosen += _player.InputDefense;
-            _playerInput.GotReady += _player.Readiness.MakeReady;
-
-            _player.Health.ValueChanged += _gameScreen.PlayerHealthView.UpdateHealth;
-            _enemy.Health.ValueChanged += _gameScreen.EnemyHealthView.UpdateHealth;
         }
 
         private void Start()
         {
             _scenario.StartAsync();
         }
-
-        private void OnDisable()
-        {
-            _inputRouter.UnSubscribe();
-
-            _timer.RemainSecondsChanged -= _gameScreen.RemainTimeView.UpdateRemain;
-
-            _playerInput.AttackChosen -= _player.InputAttack;
-            _playerInput.DefenseChosen -= _player.InputDefense;
-            _playerInput.GotReady -= _player.Readiness.MakeReady;
-
-            _player.Health.ValueChanged -= _gameScreen.PlayerHealthView.UpdateHealth;
-            _enemy.Health.ValueChanged -= _gameScreen.EnemyHealthView.UpdateHealth;
-        }
-
-
+        
         private void OnApplicationQuit()
         {
 #if UNITY_EDITOR
