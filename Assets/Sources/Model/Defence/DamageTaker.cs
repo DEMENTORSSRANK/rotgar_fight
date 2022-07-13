@@ -13,6 +13,8 @@ namespace Sources.Model.Defence
 
         public event Action Blocked;
 
+        public event Action<BodyPartType> Hit; 
+
         public DamageTaker(BasePlayer player, Health health)
         {
             _player = player ?? throw new ArgumentNullException(nameof(player));
@@ -32,6 +34,8 @@ namespace Sources.Model.Defence
 
                 return;
             }
+            
+            Hit?.Invoke(partType);
 
             _health.ApplyDamage(resultDamage);
         }

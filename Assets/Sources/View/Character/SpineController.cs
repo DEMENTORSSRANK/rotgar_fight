@@ -10,9 +10,13 @@ namespace Sources.View.Character
 
         [SerializeField] private AnimatorParameters _animatorParameters;
 
+        [SerializeField] private VfxHitView _hitView;
+
         private SkeletonAnimation _spineAnimation;
         
         public SpineAnimator Animator { get; private set; }
+
+        public VfxHitView HitView => _hitView;
 
         public void Init()
         {

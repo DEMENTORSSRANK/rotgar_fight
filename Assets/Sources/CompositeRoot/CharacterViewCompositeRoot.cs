@@ -42,13 +42,16 @@ namespace Sources.CompositeRoot
             
             _fight.Scenario.GameStarted += PlayerAnimator.ToIdle;
             _fight.Scenario.GameStarted += EnemyAnimator.ToIdle;
+
+            Player.DamageTaker.Hit += _spinePlayer.HitView.PlayHitOfPartAsync;
+            Enemy.DamageTaker.Hit += _spineEnemy.HitView.PlayHitOfPartAsync;
         }
 
         public override void Dispose()
         {
             Player.Attacker.Attacked -= _spinePlayer.Animator.AttackToBodyPart;
             Enemy.Attacker.Attacked -= _spineEnemy.Animator.AttackToBodyPart;
-            
+
             Player.DamageTaker.Blocked -= PlayerAnimator.Block;
             Enemy.DamageTaker.Blocked -= EnemyAnimator.Block;
             
@@ -57,6 +60,9 @@ namespace Sources.CompositeRoot
             
             _fight.Scenario.GameStarted -= PlayerAnimator.ToIdle;
             _fight.Scenario.GameStarted -= EnemyAnimator.ToIdle;
+            
+            Player.DamageTaker.Hit -= _spinePlayer.HitView.PlayHitOfPartAsync;
+            Enemy.DamageTaker.Hit -= _spineEnemy.HitView.PlayHitOfPartAsync;
         }
     }
 }
