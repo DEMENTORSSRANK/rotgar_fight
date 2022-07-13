@@ -23,6 +23,8 @@ namespace Sources.Model.GameScenario
 
         public event Action Won;
 
+        public abstract event Action RoundStarted;
+
         protected BaseGameScenario(IGameParameters gameParameters)
         {
             GameParameters = gameParameters ?? throw new ArgumentNullException(nameof(gameParameters));

@@ -16,6 +16,11 @@ namespace Sources.View.UserInterface.Elements.Game
         
         public RectTransform RectTransform { get; private set; }
 
+        public void SetInteractable(bool interactable)
+        {
+            _button.interactable = interactable;
+        }
+
         public void SetColor(Color color)
         {
             _button.image.color = color;

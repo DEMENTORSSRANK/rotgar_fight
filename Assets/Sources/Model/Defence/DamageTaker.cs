@@ -19,12 +19,12 @@ namespace Sources.Model.Defence
             _health = health ?? throw new ArgumentNullException(nameof(health));
         }
         
-        public void TakeAttack(BodyPartType partType, int damage)
+        public void TakeAttack(BodyPartType partType, int damage, out float resultDamage)
         {
             if (damage < 0)
                 throw new ArgumentOutOfRangeException(nameof(damage));
 
-            float resultDamage = damage * _player.Defender.CalculateDamageModifierOfPart(partType);
+            resultDamage = damage * _player.Defender.CalculateDamageModifierOfPart(partType);
             
             if (Math.Abs(resultDamage) < .1f)
             {

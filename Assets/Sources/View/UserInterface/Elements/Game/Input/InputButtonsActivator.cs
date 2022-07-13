@@ -25,6 +25,8 @@ namespace Sources.View.UserInterface.Elements.Game.Input
             ActiveAll();
             
             UpdateAvailableIsReady(false);
+            
+            EnableInteractable();
         }
 
         public void OnEndChoosing()
@@ -38,6 +40,8 @@ namespace Sources.View.UserInterface.Elements.Game.Input
             {
                 button.gameObject.SetActive(false);
             }
+            
+            DisableInteractable();
         }
 
         public void ActiveAll()
@@ -68,6 +72,32 @@ namespace Sources.View.UserInterface.Elements.Game.Input
             }
             
             _container.Ready.gameObject.SetActive(false);
+        }
+
+        private void DisableInteractable()
+        {
+            foreach (var attackButton in _container.AttackButtons)
+            {
+                attackButton.Button.SetInteractable(false);
+            }
+
+            foreach (var defenseButton in _container.DefenseButtons)
+            {
+                defenseButton.Button.SetInteractable(false);
+            }
+        }
+
+        private void EnableInteractable()
+        {
+            foreach (var attackButton in _container.AttackButtons)
+            {
+                attackButton.Button.SetInteractable(true);
+            }
+
+            foreach (var defenseButton in _container.DefenseButtons)
+            {
+                defenseButton.Button.SetInteractable(true);
+            }
         }
     }
 }

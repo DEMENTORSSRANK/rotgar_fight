@@ -15,6 +15,8 @@ namespace Sources.Model.Attack
 
         public event Action<BodyPartType> Attacked;
 
+        public event Action<BodyPartType, float> AttackedWithDamage; 
+
         public Attacker(Body body, int capacity, int damage, BasePlayer player) : base(body, capacity)
         {
             if (damage <= 0)
@@ -26,11 +28,13 @@ namespace Sources.Model.Attack
 
         public void Attack(BasePlayer target)
         {
-            var targetPart = Chosen.Last();
+            BodyPartType targetPart = Chosen.Last();
             
-            target.DamageTaker.TakeAttack(targetPart, Damage);
-            
+            target.DamageTaker.TakeAttack(targetPart, Damage, out var resultDamage);
+
             Attacked?.Invoke(targetPart);
+            
+            AttackedWithDamage?.Invoke(targetPart, resultDamage);
         }
 
         public override Task<BodyPartType> ChoosePart() => _player.ChooseAttack();
