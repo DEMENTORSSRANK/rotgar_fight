@@ -8,6 +8,8 @@ namespace Sources.View.UserInterface.Elements.Game
     [RequireComponent(typeof(RectTransform))]
     public class BoneSelectorButton : MonoBehaviour
     {
+        [SerializeField] private BoneInfoPanel _infoPanel;
+        
         private Button _button;
 
         private Transform _followTarget;
@@ -15,6 +17,8 @@ namespace Sources.View.UserInterface.Elements.Game
         public event Action OnClicked;
         
         public RectTransform RectTransform { get; private set; }
+
+        public BoneInfoPanel InfoPanel => _infoPanel;
 
         public void SetInteractable(bool interactable)
         {
@@ -41,6 +45,8 @@ namespace Sources.View.UserInterface.Elements.Game
         private void Start()
         {
             _button.onClick.AddListener(Click);
+            
+            _infoPanel.DeActive();
         }
     }
 }

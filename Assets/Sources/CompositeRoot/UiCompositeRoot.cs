@@ -19,6 +19,8 @@ namespace Sources.CompositeRoot
 
         [SerializeField] private LoseScreen _lose;
 
+        private BoneButtonsDamageInfoSetter _damageInfoSetter;
+        
         private EndScreenLogicView _endScreenLogicView;
         
         private LocalPlayer Player => _fight.Player;
@@ -34,10 +36,13 @@ namespace Sources.CompositeRoot
             _gameScreen.EnemyHealthView.SetStart(_fight.Bot.Health.Value);
             _gameScreen.RemainTimeView.UpdateRemain(_fight.Timer.RemainSeconds);
             _endScreenLogicView = new EndScreenLogicView(_win, _lose);
+            _damageInfoSetter = new BoneButtonsDamageInfoSetter(_fight.Player, _fight.Bot, _inputButtons.Container);
         }
 
         public override void Initialize()
         {
+            _damageInfoSetter.SetInfo();
+            
             _fight.Timer.RemainSecondsChanged += _gameScreen.RemainTimeView.UpdateRemain;
 
             Player.Health.ValueChanged += _gameScreen.PlayerHealthView.UpdateHealth;

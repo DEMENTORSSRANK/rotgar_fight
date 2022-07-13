@@ -5,7 +5,7 @@ namespace Sources.Model.Bodies
 {
     public class BodyPartTypeGenerator
     {
-        public readonly BodyPartType[] ObligatoryPartTypes = (BodyPartType[]) Enum.GetValues(typeof(BodyPartType));
+        public static readonly BodyPartType[] ObligatoryPartTypes = (BodyPartType[]) Enum.GetValues(typeof(BodyPartType));
 
         public int Count => ObligatoryPartTypes.Length;
 

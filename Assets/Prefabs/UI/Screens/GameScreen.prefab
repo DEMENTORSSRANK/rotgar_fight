@@ -1206,6 +1206,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2695711718054004551, guid: 0192af6edf03ddb47aec8d0865c30795,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642966363142857656, guid: 0192af6edf03ddb47aec8d0865c30795,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530289595116838216, guid: 0192af6edf03ddb47aec8d0865c30795,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821356004802800370, guid: 0192af6edf03ddb47aec8d0865c30795,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594907619475585756, guid: 0192af6edf03ddb47aec8d0865c30795,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 9149531513712917087, guid: 0192af6edf03ddb47aec8d0865c30795,
         type: 3}
       propertyPath: m_Pivot.x

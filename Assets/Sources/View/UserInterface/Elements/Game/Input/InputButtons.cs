@@ -21,6 +21,8 @@ namespace Sources.View.UserInterface.Elements.Game.Input
         
         public InputButtonsActivator Activator { get; private set; }
 
+        public ButtonsContainer Container => _container;
+
         public void Init()
         {
             _sender = new InputButtonsSender(_container);

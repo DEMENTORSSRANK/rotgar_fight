@@ -10,15 +10,17 @@ namespace Sources.Model.Defence
     public class Defender : BodyPartSelector
     {
         private readonly BasePlayer _player;
-        
+
         public Defender(Body body, int capacity, BasePlayer player) : base(body, capacity)
         {
             _player = player ?? throw new ArgumentNullException(nameof(player));
         }
 
-        public float CalculateDamageModifierOfPart(BodyPartType partType) => Contains(partType)
-            ? 0
-            : Body.GetPartOfType(partType).DamagePercents / (float) 100;
+        public float CalculateDamageModifierOfPart(BodyPartType partType) =>
+            Contains(partType) ? 0 : CalculateDamageModiferWithoutBlock(partType);
+
+        public float CalculateDamageModiferWithoutBlock(BodyPartType partType) =>
+            Body.GetPartOfType(partType).DamagePercents / (float) 100;
 
         public override Task<BodyPartType> ChoosePart()
         {

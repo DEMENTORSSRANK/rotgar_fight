@@ -25,11 +25,15 @@ namespace Sources.View.UserInterface.Elements.Game.Input
         public void ApplyToChosenState(BoneSelectorButton button)
         {
             button.SetColor(_parameters.Chosen);
+            
+            button.InfoPanel.Activate();
         }
 
         public void ApplyToDefaultState(BoneSelectorButton button)
         {
             button.SetColor(_parameters.Default);
+            
+            button.InfoPanel.DeActive();
         }
     }
 }

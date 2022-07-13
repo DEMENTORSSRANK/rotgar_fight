@@ -18,22 +18,27 @@ namespace Sources.Model.Defence
             _player = player ?? throw new ArgumentNullException(nameof(player));
             _health = health ?? throw new ArgumentNullException(nameof(health));
         }
-        
+
         public void TakeAttack(BodyPartType partType, int damage, out float resultDamage)
         {
             if (damage < 0)
                 throw new ArgumentOutOfRangeException(nameof(damage));
 
             resultDamage = damage * _player.Defender.CalculateDamageModifierOfPart(partType);
-            
+
             if (Math.Abs(resultDamage) < .1f)
             {
                 Blocked?.Invoke();
-                
+
                 return;
             }
 
             _health.ApplyDamage(resultDamage);
+        }
+
+        public float CalculatePrevResultDamage(BodyPartType partType, int damage)
+        {
+            return damage * _player.Defender.CalculateDamageModiferWithoutBlock(partType);
         }
     }
 }
