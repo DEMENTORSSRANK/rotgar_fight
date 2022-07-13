@@ -25,6 +25,13 @@ namespace Sources.View.UserInterface.Elements.Game
 
             int percents = Mathf.RoundToInt(100 / coefficient);
 
+            if (percents <= 0)
+            {
+                UpdateProgressSprite(null);
+                
+                return;
+            }
+
             int targetIndex = _progressSpritesWithPercents.Select(x => x.Percents).ToArray().LeftSegmentIndex(percents);
 
             UpdateProgressSprite(_progressSpritesWithPercents[targetIndex].Sprite);

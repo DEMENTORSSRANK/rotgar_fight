@@ -1,8 +1,4 @@
-﻿
-
-using System;
-using System.Linq;
-using ModestTree;
+﻿using System;
 
 namespace Sources.Extensions
 {
@@ -10,15 +6,13 @@ namespace Sources.Extensions
     {
         public static int LeftSegmentIndex(this int[] array, int t)
         {
-            if (array.Contains(t))
-                return array.IndexOf(t);
-            
-            int index = Array.BinarySearch(array, t);
-            
-            if (index < 0)
-                index = ~index - 1;
-            
-            return Math.Min(Math.Max(index, 0), array.Length - 2);
+            int k = 0;
+
+            for (int i = 0; i < array.Length; i++)
+                if (Math.Abs(array[i] - t) < Math.Abs(array[k] - t))
+                    k = i;
+
+            return k;
         }
     }
 }
