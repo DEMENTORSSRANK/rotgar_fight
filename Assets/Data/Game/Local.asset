@@ -28,7 +28,7 @@ MonoBehaviour:
   _defenseChooseCapacity: 2
   _attackChooseCapacity: 1
   _damage: 10
-  _health: 100
+  _health: 17
   _moveSeconds: 20
   _minBotThinkTime: 0.5
   _maxBotThinkTime: 1.5

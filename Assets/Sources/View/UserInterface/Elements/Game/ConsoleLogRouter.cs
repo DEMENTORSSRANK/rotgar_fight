@@ -47,6 +47,8 @@ namespace Sources.View.UserInterface.Elements.Game
 
         public void OnPlayerWon()
         {
+            _logger.Log("===============================================");
+        
             _logger.Log("<color=green>Player</color> won");
         }
 
