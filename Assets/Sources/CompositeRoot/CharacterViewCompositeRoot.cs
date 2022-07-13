@@ -21,7 +21,14 @@ namespace Sources.CompositeRoot
         private SpineAnimator PlayerAnimator => _spinePlayer.Animator;
 
         private SpineAnimator EnemyAnimator => _spineEnemy.Animator;
-        
+
+        public override void Compose()
+        {
+            _spineEnemy.Init();
+            
+            _spinePlayer.Init();
+        }
+
         public override void Initialize()
         {
             Player.Attacker.Attacked += PlayerAnimator.AttackToBodyPart;
@@ -29,10 +36,10 @@ namespace Sources.CompositeRoot
 
             Player.DamageTaker.Blocked += PlayerAnimator.Block;
             Enemy.DamageTaker.Blocked += EnemyAnimator.Block;
-
+            
             Player.Health.Dead += PlayerAnimator.Die;
             Enemy.Health.Dead += EnemyAnimator.Die;
-
+            
             _fight.Scenario.GameStarted += PlayerAnimator.ToIdle;
             _fight.Scenario.GameStarted += EnemyAnimator.ToIdle;
         }

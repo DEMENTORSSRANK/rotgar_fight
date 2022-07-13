@@ -14,7 +14,7 @@ namespace Sources.View.Character
         
         public SpineAnimator Animator { get; private set; }
 
-        private void Awake()
+        public void Init()
         {
             _spineAnimation = GetComponent<SkeletonAnimation>();
             
